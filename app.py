@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import Api
-from db import db
+#from db import db
 
 #here should be the imports from JWT but the thing doesn't work...
 #from resource.user import UserRegister
@@ -12,7 +12,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 app.secret_key = 'pass'
 api = Api(app)
-
 
 api.add_resource(Store, '/store/<string:name>')
 api.add_resource(Item, '/item/<string:name>')
